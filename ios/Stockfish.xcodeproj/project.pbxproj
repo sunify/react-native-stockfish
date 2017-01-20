@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C09060041E31F6BF007EFCD3 /* Stockfish.mm in Sources */ = {isa = PBXBuildFile; fileRef = C09060031E31F6BF007EFCD3 /* Stockfish.mm */; };
+		C09060041E31F6BF007EFCD3 /* Stockfish.mm in Sources */ = {isa = PBXBuildFile; fileRef = C09060031E31F6BF007EFCD3 /* Stockfish.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		C09060051E31F6BF007EFCD3 /* Stockfish.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = C09060021E31F6BF007EFCD3 /* Stockfish.h */; };
 		C09060371E320E47007EFCD3 /* benchmark.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C090600C1E320E47007EFCD3 /* benchmark.cpp */; };
 		C09060381E320E47007EFCD3 /* bitbase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C090600D1E320E47007EFCD3 /* bitbase.cpp */; };
@@ -29,8 +29,8 @@
 		C09060491E320E47007EFCD3 /* tt.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C09060311E320E47007EFCD3 /* tt.cpp */; };
 		C090604A1E320E47007EFCD3 /* uci.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C09060341E320E47007EFCD3 /* uci.cpp */; };
 		C090604B1E320E47007EFCD3 /* ucioption.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C09060351E320E47007EFCD3 /* ucioption.cpp */; };
-		C09060501E320EA6007EFCD3 /* PGN.mm in Sources */ = {isa = PBXBuildFile; fileRef = C090604D1E320EA6007EFCD3 /* PGN.mm */; };
-		C09060511E320EA6007EFCD3 /* Queue.mm in Sources */ = {isa = PBXBuildFile; fileRef = C090604F1E320EA6007EFCD3 /* Queue.mm */; };
+		C09060501E320EA6007EFCD3 /* PGN.mm in Sources */ = {isa = PBXBuildFile; fileRef = C090604D1E320EA6007EFCD3 /* PGN.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		C09060511E320EA6007EFCD3 /* Queue.mm in Sources */ = {isa = PBXBuildFile; fileRef = C090604F1E320EA6007EFCD3 /* Queue.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */

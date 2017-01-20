@@ -2,7 +2,7 @@
 //// Includes
 ////
 
-#import "EngineSelfManager.h"
+#import "Stockfish.h"
 #import "PGN.h"
 
 #include <iomanip>
