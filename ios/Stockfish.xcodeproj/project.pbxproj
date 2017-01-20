@@ -1,0 +1,407 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C09060041E31F6BF007EFCD3 /* Stockfish.mm in Sources */ = {isa = PBXBuildFile; fileRef = C09060031E31F6BF007EFCD3 /* Stockfish.mm */; };
+		C09060051E31F6BF007EFCD3 /* Stockfish.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = C09060021E31F6BF007EFCD3 /* Stockfish.h */; };
+		C09060371E320E47007EFCD3 /* benchmark.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C090600C1E320E47007EFCD3 /* benchmark.cpp */; };
+		C09060381E320E47007EFCD3 /* bitbase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C090600D1E320E47007EFCD3 /* bitbase.cpp */; };
+		C09060391E320E47007EFCD3 /* bitboard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C090600E1E320E47007EFCD3 /* bitboard.cpp */; };
+		C090603A1E320E47007EFCD3 /* book.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C09060111E320E47007EFCD3 /* book.cpp */; };
+		C090603B1E320E47007EFCD3 /* endgame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C09060131E320E47007EFCD3 /* endgame.cpp */; };
+		C090603C1E320E47007EFCD3 /* evaluate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C09060151E320E47007EFCD3 /* evaluate.cpp */; };
+		C090603D1E320E47007EFCD3 /* iphone.mm in Sources */ = {isa = PBXBuildFile; fileRef = C09060181E320E47007EFCD3 /* iphone.mm */; };
+		C090603F1E320E47007EFCD3 /* material.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C090601A1E320E47007EFCD3 /* material.cpp */; };
+		C09060401E320E47007EFCD3 /* misc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C090601C1E320E47007EFCD3 /* misc.cpp */; };
+		C09060411E320E47007EFCD3 /* movegen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C090601E1E320E47007EFCD3 /* movegen.cpp */; };
+		C09060421E320E47007EFCD3 /* movepick.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C09060201E320E47007EFCD3 /* movepick.cpp */; };
+		C09060431E320E47007EFCD3 /* notation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C09060221E320E47007EFCD3 /* notation.cpp */; };
+		C09060441E320E47007EFCD3 /* pawns.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C09060241E320E47007EFCD3 /* pawns.cpp */; };
+		C09060451E320E47007EFCD3 /* position.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C09060271E320E47007EFCD3 /* position.cpp */; };
+		C09060461E320E47007EFCD3 /* search.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C090602B1E320E47007EFCD3 /* search.cpp */; };
+		C09060471E320E47007EFCD3 /* thread.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C090602D1E320E47007EFCD3 /* thread.cpp */; };
+		C09060481E320E47007EFCD3 /* timeman.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C090602F1E320E47007EFCD3 /* timeman.cpp */; };
+		C09060491E320E47007EFCD3 /* tt.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C09060311E320E47007EFCD3 /* tt.cpp */; };
+		C090604A1E320E47007EFCD3 /* uci.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C09060341E320E47007EFCD3 /* uci.cpp */; };
+		C090604B1E320E47007EFCD3 /* ucioption.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C09060351E320E47007EFCD3 /* ucioption.cpp */; };
+		C09060501E320EA6007EFCD3 /* PGN.mm in Sources */ = {isa = PBXBuildFile; fileRef = C090604D1E320EA6007EFCD3 /* PGN.mm */; };
+		C09060511E320EA6007EFCD3 /* Queue.mm in Sources */ = {isa = PBXBuildFile; fileRef = C090604F1E320EA6007EFCD3 /* Queue.mm */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C0905FFD1E31F6BF007EFCD3 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				C09060051E31F6BF007EFCD3 /* Stockfish.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		C0905FFF1E31F6BF007EFCD3 /* libStockfish.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libStockfish.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C09060021E31F6BF007EFCD3 /* Stockfish.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Stockfish.h; sourceTree = "<group>"; };
+		C09060031E31F6BF007EFCD3 /* Stockfish.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = Stockfish.mm; sourceTree = "<group>"; };
+		C090600C1E320E47007EFCD3 /* benchmark.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = benchmark.cpp; sourceTree = "<group>"; };
+		C090600D1E320E47007EFCD3 /* bitbase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = bitbase.cpp; sourceTree = "<group>"; };
+		C090600E1E320E47007EFCD3 /* bitboard.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = bitboard.cpp; sourceTree = "<group>"; };
+		C090600F1E320E47007EFCD3 /* bitboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bitboard.h; sourceTree = "<group>"; };
+		C09060101E320E47007EFCD3 /* bitcount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bitcount.h; sourceTree = "<group>"; };
+		C09060111E320E47007EFCD3 /* book.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = book.cpp; sourceTree = "<group>"; };
+		C09060121E320E47007EFCD3 /* book.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = book.h; sourceTree = "<group>"; };
+		C09060131E320E47007EFCD3 /* endgame.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = endgame.cpp; sourceTree = "<group>"; };
+		C09060141E320E47007EFCD3 /* endgame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = endgame.h; sourceTree = "<group>"; };
+		C09060151E320E47007EFCD3 /* evaluate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = evaluate.cpp; sourceTree = "<group>"; };
+		C09060161E320E47007EFCD3 /* evaluate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = evaluate.h; sourceTree = "<group>"; };
+		C09060171E320E47007EFCD3 /* iphone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iphone.h; sourceTree = "<group>"; };
+		C09060181E320E47007EFCD3 /* iphone.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = iphone.mm; sourceTree = "<group>"; };
+		C090601A1E320E47007EFCD3 /* material.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = material.cpp; sourceTree = "<group>"; };
+		C090601B1E320E47007EFCD3 /* material.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = material.h; sourceTree = "<group>"; };
+		C090601C1E320E47007EFCD3 /* misc.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = misc.cpp; sourceTree = "<group>"; };
+		C090601D1E320E47007EFCD3 /* misc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = misc.h; sourceTree = "<group>"; };
+		C090601E1E320E47007EFCD3 /* movegen.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = movegen.cpp; sourceTree = "<group>"; };
+		C090601F1E320E47007EFCD3 /* movegen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = movegen.h; sourceTree = "<group>"; };
+		C09060201E320E47007EFCD3 /* movepick.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = movepick.cpp; sourceTree = "<group>"; };
+		C09060211E320E47007EFCD3 /* movepick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = movepick.h; sourceTree = "<group>"; };
+		C09060221E320E47007EFCD3 /* notation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = notation.cpp; sourceTree = "<group>"; };
+		C09060231E320E47007EFCD3 /* notation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = notation.h; sourceTree = "<group>"; };
+		C09060241E320E47007EFCD3 /* pawns.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = pawns.cpp; sourceTree = "<group>"; };
+		C09060251E320E47007EFCD3 /* pawns.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pawns.h; sourceTree = "<group>"; };
+		C09060261E320E47007EFCD3 /* platform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = platform.h; sourceTree = "<group>"; };
+		C09060271E320E47007EFCD3 /* position.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = position.cpp; sourceTree = "<group>"; };
+		C09060281E320E47007EFCD3 /* position.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = position.h; sourceTree = "<group>"; };
+		C09060291E320E47007EFCD3 /* psqtab.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = psqtab.h; sourceTree = "<group>"; };
+		C090602A1E320E47007EFCD3 /* rkiss.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rkiss.h; sourceTree = "<group>"; };
+		C090602B1E320E47007EFCD3 /* search.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = search.cpp; sourceTree = "<group>"; };
+		C090602C1E320E47007EFCD3 /* search.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = search.h; sourceTree = "<group>"; };
+		C090602D1E320E47007EFCD3 /* thread.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = thread.cpp; sourceTree = "<group>"; };
+		C090602E1E320E47007EFCD3 /* thread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = thread.h; sourceTree = "<group>"; };
+		C090602F1E320E47007EFCD3 /* timeman.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = timeman.cpp; sourceTree = "<group>"; };
+		C09060301E320E47007EFCD3 /* timeman.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = timeman.h; sourceTree = "<group>"; };
+		C09060311E320E47007EFCD3 /* tt.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tt.cpp; sourceTree = "<group>"; };
+		C09060321E320E47007EFCD3 /* tt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tt.h; sourceTree = "<group>"; };
+		C09060331E320E47007EFCD3 /* types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = types.h; sourceTree = "<group>"; };
+		C09060341E320E47007EFCD3 /* uci.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = uci.cpp; sourceTree = "<group>"; };
+		C09060351E320E47007EFCD3 /* ucioption.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ucioption.cpp; sourceTree = "<group>"; };
+		C09060361E320E47007EFCD3 /* ucioption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ucioption.h; sourceTree = "<group>"; };
+		C090604C1E320EA6007EFCD3 /* PGN.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGN.h; sourceTree = "<group>"; };
+		C090604D1E320EA6007EFCD3 /* PGN.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PGN.mm; sourceTree = "<group>"; };
+		C090604E1E320EA6007EFCD3 /* Queue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Queue.h; sourceTree = "<group>"; };
+		C090604F1E320EA6007EFCD3 /* Queue.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Queue.mm; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C0905FFC1E31F6BF007EFCD3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C0905FF61E31F6BF007EFCD3 = {
+			isa = PBXGroup;
+			children = (
+				C090600B1E320E47007EFCD3 /* Engine */,
+				C09060011E31F6BF007EFCD3 /* Stockfish */,
+				C09060001E31F6BF007EFCD3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C09060001E31F6BF007EFCD3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C0905FFF1E31F6BF007EFCD3 /* libStockfish.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C09060011E31F6BF007EFCD3 /* Stockfish */ = {
+			isa = PBXGroup;
+			children = (
+				C090604C1E320EA6007EFCD3 /* PGN.h */,
+				C090604D1E320EA6007EFCD3 /* PGN.mm */,
+				C090604E1E320EA6007EFCD3 /* Queue.h */,
+				C090604F1E320EA6007EFCD3 /* Queue.mm */,
+				C09060021E31F6BF007EFCD3 /* Stockfish.h */,
+				C09060031E31F6BF007EFCD3 /* Stockfish.mm */,
+			);
+			path = Stockfish;
+			sourceTree = "<group>";
+		};
+		C090600B1E320E47007EFCD3 /* Engine */ = {
+			isa = PBXGroup;
+			children = (
+				C090600C1E320E47007EFCD3 /* benchmark.cpp */,
+				C090600D1E320E47007EFCD3 /* bitbase.cpp */,
+				C090600E1E320E47007EFCD3 /* bitboard.cpp */,
+				C090600F1E320E47007EFCD3 /* bitboard.h */,
+				C09060101E320E47007EFCD3 /* bitcount.h */,
+				C09060111E320E47007EFCD3 /* book.cpp */,
+				C09060121E320E47007EFCD3 /* book.h */,
+				C09060131E320E47007EFCD3 /* endgame.cpp */,
+				C09060141E320E47007EFCD3 /* endgame.h */,
+				C09060151E320E47007EFCD3 /* evaluate.cpp */,
+				C09060161E320E47007EFCD3 /* evaluate.h */,
+				C09060171E320E47007EFCD3 /* iphone.h */,
+				C09060181E320E47007EFCD3 /* iphone.mm */,
+				C090601A1E320E47007EFCD3 /* material.cpp */,
+				C090601B1E320E47007EFCD3 /* material.h */,
+				C090601C1E320E47007EFCD3 /* misc.cpp */,
+				C090601D1E320E47007EFCD3 /* misc.h */,
+				C090601E1E320E47007EFCD3 /* movegen.cpp */,
+				C090601F1E320E47007EFCD3 /* movegen.h */,
+				C09060201E320E47007EFCD3 /* movepick.cpp */,
+				C09060211E320E47007EFCD3 /* movepick.h */,
+				C09060221E320E47007EFCD3 /* notation.cpp */,
+				C09060231E320E47007EFCD3 /* notation.h */,
+				C09060241E320E47007EFCD3 /* pawns.cpp */,
+				C09060251E320E47007EFCD3 /* pawns.h */,
+				C09060261E320E47007EFCD3 /* platform.h */,
+				C09060271E320E47007EFCD3 /* position.cpp */,
+				C09060281E320E47007EFCD3 /* position.h */,
+				C09060291E320E47007EFCD3 /* psqtab.h */,
+				C090602A1E320E47007EFCD3 /* rkiss.h */,
+				C090602B1E320E47007EFCD3 /* search.cpp */,
+				C090602C1E320E47007EFCD3 /* search.h */,
+				C090602D1E320E47007EFCD3 /* thread.cpp */,
+				C090602E1E320E47007EFCD3 /* thread.h */,
+				C090602F1E320E47007EFCD3 /* timeman.cpp */,
+				C09060301E320E47007EFCD3 /* timeman.h */,
+				C09060311E320E47007EFCD3 /* tt.cpp */,
+				C09060321E320E47007EFCD3 /* tt.h */,
+				C09060331E320E47007EFCD3 /* types.h */,
+				C09060341E320E47007EFCD3 /* uci.cpp */,
+				C09060351E320E47007EFCD3 /* ucioption.cpp */,
+				C09060361E320E47007EFCD3 /* ucioption.h */,
+			);
+			path = Engine;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C0905FFE1E31F6BF007EFCD3 /* Stockfish */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C09060081E31F6BF007EFCD3 /* Build configuration list for PBXNativeTarget "Stockfish" */;
+			buildPhases = (
+				C0905FFB1E31F6BF007EFCD3 /* Sources */,
+				C0905FFC1E31F6BF007EFCD3 /* Frameworks */,
+				C0905FFD1E31F6BF007EFCD3 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Stockfish;
+			productName = Stockfish;
+			productReference = C0905FFF1E31F6BF007EFCD3 /* libStockfish.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C0905FF71E31F6BF007EFCD3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = "Александр Лунев";
+				TargetAttributes = {
+					C0905FFE1E31F6BF007EFCD3 = {
+						CreatedOnToolsVersion = 8.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = C0905FFA1E31F6BF007EFCD3 /* Build configuration list for PBXProject "Stockfish" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = C0905FF61E31F6BF007EFCD3;
+			productRefGroup = C09060001E31F6BF007EFCD3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C0905FFE1E31F6BF007EFCD3 /* Stockfish */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C0905FFB1E31F6BF007EFCD3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C09060391E320E47007EFCD3 /* bitboard.cpp in Sources */,
+				C09060471E320E47007EFCD3 /* thread.cpp in Sources */,
+				C09060431E320E47007EFCD3 /* notation.cpp in Sources */,
+				C090604A1E320E47007EFCD3 /* uci.cpp in Sources */,
+				C09060451E320E47007EFCD3 /* position.cpp in Sources */,
+				C09060441E320E47007EFCD3 /* pawns.cpp in Sources */,
+				C090603C1E320E47007EFCD3 /* evaluate.cpp in Sources */,
+				C090604B1E320E47007EFCD3 /* ucioption.cpp in Sources */,
+				C09060481E320E47007EFCD3 /* timeman.cpp in Sources */,
+				C09060501E320EA6007EFCD3 /* PGN.mm in Sources */,
+				C09060401E320E47007EFCD3 /* misc.cpp in Sources */,
+				C09060381E320E47007EFCD3 /* bitbase.cpp in Sources */,
+				C090603F1E320E47007EFCD3 /* material.cpp in Sources */,
+				C09060041E31F6BF007EFCD3 /* Stockfish.mm in Sources */,
+				C090603D1E320E47007EFCD3 /* iphone.mm in Sources */,
+				C090603B1E320E47007EFCD3 /* endgame.cpp in Sources */,
+				C09060461E320E47007EFCD3 /* search.cpp in Sources */,
+				C09060511E320EA6007EFCD3 /* Queue.mm in Sources */,
+				C09060491E320E47007EFCD3 /* tt.cpp in Sources */,
+				C09060411E320E47007EFCD3 /* movegen.cpp in Sources */,
+				C090603A1E320E47007EFCD3 /* book.cpp in Sources */,
+				C09060371E320E47007EFCD3 /* benchmark.cpp in Sources */,
+				C09060421E320E47007EFCD3 /* movepick.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		C09060061E31F6BF007EFCD3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		C09060071E31F6BF007EFCD3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C09060091E31F6BF007EFCD3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		C090600A1E31F6BF007EFCD3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C0905FFA1E31F6BF007EFCD3 /* Build configuration list for PBXProject "Stockfish" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C09060061E31F6BF007EFCD3 /* Debug */,
+				C09060071E31F6BF007EFCD3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C09060081E31F6BF007EFCD3 /* Build configuration list for PBXNativeTarget "Stockfish" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C09060091E31F6BF007EFCD3 /* Debug */,
+				C090600A1E31F6BF007EFCD3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C0905FF71E31F6BF007EFCD3 /* Project object */;
+}
