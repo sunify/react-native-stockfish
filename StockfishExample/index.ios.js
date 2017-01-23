@@ -10,45 +10,108 @@ import {
   StyleSheet,
   Text,
   View,
+  TextInput,
+  ScrollView,
   Button,
   NativeModules,
 } from 'react-native';
 import Engine from 'react-native-stockfish';
 
+// Engine.on('pv', pv => console.log('pv', pv));
+// Engine.on('bestMove', moves => {
+//   console.log('bestMove', moves);
+// });
+// Engine.on('eval', result => {
+//   console.log(result);
+// });
+
 export default class StockfishExample extends Component {
 
-  constructor(props) {
-    super(props);
+  state = {
+    moves: '',
+    baseTurn: 'w',
+    info: [{ score: 0, pv: ''}, { score: 0, pv: ''}, { score: 0, pv: ''}],
+  };
 
-    this.state = {
-      bestMove: '',
-    };
+  constructor() {
+    super();
 
-    console.log(NativeModules);
-    Engine.on('bestMove', ({ bestMove }) => {
-      this.setState({ bestMove });
+    Engine.on('info', info => {
+      const i = info.multipv - 1;
+      const nextInfo = [...this.state.info];
+      nextInfo[i] = {
+        ...info,
+        score: this.score(info.score),
+      };
+      this.setState({
+        info: nextInfo,
+      });
+    });
+
+    Engine.on('bestMove', ({bestMove}) => {
+      this.setState(state => ({
+        moves: state.moves + ' ' + bestMove,
+      }));
     });
   }
 
-  handleTestPress() {
-    console.log(Engine);
-    Engine.sendCommand('position startpos moves e2e4');
-    Engine.sendCommand('go depth 10');
+  handleAnalyze() {
+    this.setState(state => ({
+      baseTurn: (state.moves.split(' ').length % 2) ? 'w' : 'b',
+    }));
+    Engine.sendCommand(`position startpos moves ${this.state.moves}`);
+    Engine.sendCommand('setoption name Skill Level value 20');
+    Engine.sendCommand('setoption name MultiPV value 3');
+    Engine.sendCommand('go infinite');
     Engine.commit();
+  }
+
+  handleStop() {
+    Engine.stop();
+    // Engine.commit();
+  }
+
+  score(score) {
+    const { baseTurn } = this.state;
+    return ((baseTurn === 'b') ? -1 : 1) * score / 100;
   }
 
   render() {
     return (
       <View style={styles.container}>
-        <Button
-          title="Test"
-          onPress={() => this.handleTestPress()}
+        <Text>Score: {this.state.info[0].score}</Text>
+        <ScrollView automaticallyAdjustContentInsets={false} style={{ position: 'absolute', left: 0, right: 0, bottom: 0 }}>
+          {this.state.info.map((info, i) =>
+            <View key={i}>
+              <Text>
+                <Text style={{ fontWeight: 'bold' }}>
+                  {info.score}
+                </Text> {info.pv}
+              </Text>
+            </View>
+          )}
+        </ScrollView>
+        <TextInput
+          style={{
+            width: 300,
+            height: 200,
+            backgroundColor: '#fff',
+            borderColor: '#ccc',
+            borderWidth: 1,
+          }}
+          multiline
+          value={this.state.moves}
+          onChangeText={moves => this.setState({ moves })}
+          autoCapitalize="none"
           />
-        {this.state.bestMove.length > 0 &&
-          <Text style={styles.welcome}>
-            Best move: {this.state.bestMove}
-          </Text>
-        }
+        <Button
+          onPress={() => this.handleAnalyze()}
+          title="Analyze"
+          />
+        <Button
+          onPress={() => this.handleStop()}
+          title="Stop"
+          />
       </View>
     );
   }
@@ -57,9 +120,8 @@ export default class StockfishExample extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
     backgroundColor: '#F5FCFF',
+    paddingTop: 50,
   },
   welcome: {
     fontSize: 20,

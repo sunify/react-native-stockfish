@@ -47,11 +47,19 @@ export default class Engine extends EventEmitter {
 
   async sendCommand(command) {
     await this.ready;
+    if (command === 'quit' || command === 'stop') {
+      Stockfish.stop();
+    }
     Stockfish.sendCommand(command);
   }
 
   async commit() {
     await this.ready;
     Stockfish.commit();
+  }
+
+  async stop() {
+    await this.ready;
+    Stockfish.stop();
   }
 }

@@ -144,6 +144,7 @@
 			children = (
 				C090600C1E320E47007EFCD3 /* benchmark.cpp */,
 				C090600D1E320E47007EFCD3 /* bitbase.cpp */,
+				C09060161E320E47007EFCD3 /* evaluate.h */,
 				C090600E1E320E47007EFCD3 /* bitboard.cpp */,
 				C090600F1E320E47007EFCD3 /* bitboard.h */,
 				C09060101E320E47007EFCD3 /* bitcount.h */,
@@ -152,7 +153,6 @@
 				C09060131E320E47007EFCD3 /* endgame.cpp */,
 				C09060141E320E47007EFCD3 /* endgame.h */,
 				C09060151E320E47007EFCD3 /* evaluate.cpp */,
-				C09060161E320E47007EFCD3 /* evaluate.h */,
 				C09060171E320E47007EFCD3 /* iphone.h */,
 				C09060181E320E47007EFCD3 /* iphone.mm */,
 				C090601A1E320E47007EFCD3 /* material.cpp */,

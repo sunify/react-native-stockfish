@@ -28,6 +28,10 @@
    return self;
 }
 
+- (void) clear {
+   contents = [[NSMutableArray alloc] init];
+}
+
 - (BOOL)isEmpty {
    return [self size] == 0;
 }

@@ -42,6 +42,17 @@ RCT_EXPORT_METHOD(commit)
     [self commitCommands];
 }
 
+RCT_EXPORT_METHOD(stop)
+{
+    pthread_mutex_lock(&WaitConditionLock);
+    //pthread_cond_wait(&WaitCondition, &WaitConditionLock);
+    
+    [commandQueue clear];
+    command_to_engine([@"stop" UTF8String]);
+    
+    pthread_mutex_unlock(&WaitConditionLock);
+}
+
 - (id)initEngine {
     GlobalEngineController = self;
     commandQueue = [[Queue alloc] init];
