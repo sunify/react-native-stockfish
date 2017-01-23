@@ -268,7 +268,8 @@ finalize:
 
   // Best move could be MOVE_NONE when searching on a stalemate position
   #if defined(IPHONE_GLAURUNG)
-  bestmove_to_ui(move_to_uci(RootMoves[0].pv[0], RootPos.is_chess960()), move_to_uci(RootMoves[0].pv[1], RootPos.is_chess960()));
+    std::string score = score_to_uci(RootMoves[0].score);
+    bestmove_to_ui(move_to_uci(RootMoves[0].pv[0], RootPos.is_chess960()), move_to_uci(RootMoves[0].pv[1], RootPos.is_chess960()), score);
   #endif
   sync_cout << "bestmove " << move_to_uci(RootMoves[0].pv[0], RootPos.is_chess960())
             << " ponder "  << move_to_uci(RootMoves[0].pv[1], RootPos.is_chess960())

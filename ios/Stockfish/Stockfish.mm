@@ -151,10 +151,14 @@ RCT_EXPORT_METHOD(stop)
 }
 
 
-- (void)sendBestMove:(NSString *)bestMove ponderMove:(NSString *)ponderMove {
-    NSLog(@"received best move: %@ ponder move: %@", bestMove, ponderMove);
+- (void)sendBestMove:(NSString *)bestMove ponderMove:(NSString *)ponderMove score:(NSString *)score {
+    NSLog(@"received best move: %@ ponder move: %@ score: %@", bestMove, ponderMove, score);
     if (!ignoreBestmove) {
-        [self.bridge.eventDispatcher sendAppEventWithName:@"engine_bestMove" body:@{@"bestMove": bestMove, @"ponderMove": ponderMove}];
+        [self.bridge.eventDispatcher sendAppEventWithName:@"engine_bestMove" body:@{
+                                                                                    @"bestMove": bestMove,
+                                                                                    @"ponderMove": ponderMove,
+                                                                                    @"score": score,
+                                                                                    }];
     } else {
         NSLog(@"ignoring best move");
         ignoreBestmove = NO;

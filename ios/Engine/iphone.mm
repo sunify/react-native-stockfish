@@ -94,10 +94,11 @@ void searchstats_to_ui(int depth, int64_t nodes, int time) {
                           waitUntilDone: NO];
 }
 
-void bestmove_to_ui(const string &best, const string &ponder) {
+void bestmove_to_ui(const string &best, const string &ponder, const string &score) {
   [GlobalEngineController
     sendBestMove: [NSString stringWithUTF8String: best.c_str()]
-    ponderMove: [NSString stringWithUTF8String: ponder.c_str()]];
+    ponderMove: [NSString stringWithUTF8String: ponder.c_str()]
+    score: [NSString stringWithUTF8String: score.c_str()]];
 }
 
 void command_to_engine(const string &command) {

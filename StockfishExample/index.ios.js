@@ -28,6 +28,8 @@ import Engine from 'react-native-stockfish';
 export default class StockfishExample extends Component {
 
   state = {
+    depth: 0,
+    score: 0,
     moves: '',
     baseTurn: 'w',
     info: [{ score: 0, pv: ''}, { score: 0, pv: ''}, { score: 0, pv: ''}],
@@ -45,12 +47,20 @@ export default class StockfishExample extends Component {
       };
       this.setState({
         info: nextInfo,
+        depth: info.depth,
       });
+
+      if (i === 0) {
+        this.setState({
+          score: this.score(info.score),
+        });
+      }
     });
 
-    Engine.on('bestMove', ({bestMove}) => {
+    Engine.on('bestMove', ({bestMove, score}) => {
       this.setState(state => ({
         moves: state.moves + ' ' + bestMove,
+        score: this.score(score),
       }));
     });
   }
@@ -62,7 +72,7 @@ export default class StockfishExample extends Component {
     Engine.sendCommand(`position startpos moves ${this.state.moves}`);
     Engine.sendCommand('setoption name Skill Level value 20');
     Engine.sendCommand('setoption name MultiPV value 3');
-    Engine.sendCommand('go infinite');
+    Engine.sendCommand('go mindepth 8 movetime 30000');
     Engine.commit();
   }
 
@@ -79,10 +89,28 @@ export default class StockfishExample extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Score: {this.state.info[0].score}</Text>
-        <ScrollView automaticallyAdjustContentInsets={false} style={{ position: 'absolute', left: 0, right: 0, bottom: 0 }}>
+        <Text>
+          Score: {this.state.score} |
+          Depth: {this.state.depth}
+        </Text>
+        <ScrollView
+          automaticallyAdjustContentInsets={false}
+          horizontal
+          style={{
+            position: 'absolute',
+            left: 0,
+            right: 0,
+            bottom: 0,
+          }}
+          contentContainerStyle={{
+            flexDirection: 'column',
+            padding: 10,
+          }}
+        >
           {this.state.info.map((info, i) =>
-            <View key={i}>
+            <View key={i} style={{
+              
+            }}>
               <Text>
                 <Text style={{ fontWeight: 'bold' }}>
                   {info.score}

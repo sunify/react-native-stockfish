@@ -34,7 +34,7 @@
 - (void)sendEval:(NSString *)result;
 - (void)sendPV:(NSString *)pv;
 - (void)sendSearchStats:(NSString *)searchStats;
-- (void)sendBestMove:(NSString *)bestMove ponderMove:(NSString *)ponderMove;
+- (void)sendBestMove:(NSString *)bestMove ponderMove:(NSString *)ponderMove score:(NSString *)score;
 - (void)ponderhit;
 - (void)pondermiss;
 - (void)quit;

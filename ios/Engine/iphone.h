@@ -15,7 +15,7 @@ extern void eval_to_ui(const std::string &result);
 extern void pv_to_ui(const std::string &pv);
 extern void currmove_to_ui(const std::string currmove, int currmovenum,
                            int movenum);
-extern void bestmove_to_ui(const std::string &best, const std::string &ponder);
+extern void bestmove_to_ui(const std::string &best, const std::string &ponder, const std::string &score);
 extern void searchstats_to_ui(int depth, int64_t nodes, int time);
 extern void command_to_engine(const std::string &command);
 extern bool command_is_waiting();

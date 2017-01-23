@@ -2,6 +2,8 @@ import { NativeModules, DeviceEventEmitter } from 'react-native';
 const { Stockfish } = NativeModules;
 import EventEmitter from 'eventemitter2';
 
+const parseScore = score => parseInt(score.replace('cp ', ''), 10);
+
 export default class Engine extends EventEmitter {
   constructor() {
     super({});
@@ -10,14 +12,14 @@ export default class Engine extends EventEmitter {
       this.emit('pv', pv);
     });
 
-    DeviceEventEmitter.addListener(`engine_bestMove`, ({ bestMove, ponderMove }) => {
-      this.emit('bestMove', { bestMove, ponderMove });
+    DeviceEventEmitter.addListener(`engine_bestMove`, ({ bestMove, ponderMove, score }) => {
+      this.emit('bestMove', { bestMove, ponderMove, score: parseScore(score) });
     });
 
     DeviceEventEmitter.addListener(`engine_info`, info => {
       this.emit('info', {
         ...info,
-        score: parseInt(info.score.replace('cp ', ''), 10),
+        score: parseScore(info.score),
         pv: info.pv.trim(),
       });
     });
