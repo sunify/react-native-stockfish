@@ -55,6 +55,12 @@ android_resource(
   package = 'com.stockfishexample',
 )
 
+android_resource(
+  name = 'assets',
+  res = 'src/main/assets',
+  package = 'com.stockfishexample',
+)
+
 android_binary(
   name = 'app',
   package_type = 'debug',

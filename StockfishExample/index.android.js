@@ -9,11 +9,27 @@ import {
   AppRegistry,
   StyleSheet,
   Text,
-  View
+  NativeModules,
+  View,
+  DeviceEventEmitter
 } from 'react-native';
+
+const { Stockfish } = NativeModules;
 
 export default class StockfishExample extends Component {
   render() {
+    Stockfish.startEngine();
+    Stockfish.sendCommand('stop');
+    Stockfish.sendCommand('uci');
+    Stockfish.sendCommand('debug on');
+    Stockfish.sendCommand('isready');
+    Stockfish.sendCommand('ucinewgame');
+    Stockfish.sendCommand('setoption name Ponder value false');
+    Stockfish.sendCommand('position startpos moves e2e4 e7e5');
+    Stockfish.sendCommand('go depth 5');
+    DeviceEventEmitter.addListener('engine_data', data => {
+      console.log('from engine', data);
+    });
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
