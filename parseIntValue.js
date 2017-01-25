@@ -1,4 +1,4 @@
-function parseIntValue(str, valueKey) {
+export default function parseIntValue(str, valueKey) {
   const regexp = new RegExp(`\\s${valueKey}\\s(\\d+)`);
   const match = str.match(regexp);
   if (!match) {
