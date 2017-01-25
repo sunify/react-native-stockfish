@@ -1,8 +1,13 @@
 import { NativeModules, DeviceEventEmitter } from 'react-native';
 import EngineBase from './EngineBase';
+import parseIntValue from './parseIntValue';
 const { Stockfish } = NativeModules;
 
-const parseScore = score => parseInt(score.replace('cp ', ''), 10);
+const parseScore = score => {
+  const cpScore = parseIntValue(score, 'cp');
+  const mateScore = parseIntValue(score, 'mate');
+  return cpScore ? ['cp', cpScore] : ['mate', mateScore];
+};
 
 export default class Engine extends EngineBase {
   constructor() {
@@ -17,6 +22,7 @@ export default class Engine extends EngineBase {
     });
 
     DeviceEventEmitter.addListener(`engine_info`, info => {
+      const cpScore = 
       this.emit('info', {
         ...info,
         score: parseScore(info.score),
