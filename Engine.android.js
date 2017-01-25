@@ -1,5 +1,6 @@
 import { NativeModules, DeviceEventEmitter } from 'react-native';
 import EngineBase from './EngineBase';
+import parseIntValue from './parseIntValue';
 const { Stockfish } = NativeModules;
 
 export default class Engine extends EngineBase {
@@ -31,16 +32,6 @@ export default class Engine extends EngineBase {
   }
 }
 
-function parseIntValue(str, valueKey) {
-  const regexp = new RegExp(`\\s${valueKey}\\s(\\d+)`);
-  const match = str.match(regexp);
-  if (!match) {
-    return null;
-  }
-
-  return Number(match[1]);
-}
-
 function parsePv(info) {
   const match = info.match(/\spv\s(.*)$/);
   if (!match) {
@@ -61,6 +52,8 @@ function parseEngineReponse(response) {
       }
     };
   } else if (response.startsWith('info')) {
+    const cpScore = parseIntValue(response, 'score cp');
+    const mateScore = parseIntValue(response, 'score mate');
     return {
       type: 'info',
       data: {
@@ -69,7 +62,7 @@ function parseEngineReponse(response) {
         seldepth: parseIntValue(response, 'seldepth'),
         nodes: parseIntValue(response, 'nodes'),
         time: parseIntValue(response, 'time'),
-        score: parseIntValue(response, 'score cp'),
+        score: cpScore ? ['cp', cpScore] : ['mate', mateScore],
         pv: parsePv(response),
       },
     };
