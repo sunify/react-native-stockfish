@@ -4,8 +4,8 @@ import parseIntValue from './parseIntValue';
 const { Stockfish } = NativeModules;
 
 const parseScore = score => {
-  const cpScore = parseIntValue(score, 'cp');
-  const mateScore = parseIntValue(score, 'mate');
+  const cpScore = parseIntValue(` ${score}`, 'cp');
+  const mateScore = parseIntValue(` ${score}`, 'mate');
   return cpScore ? ['cp', cpScore] : ['mate', mateScore];
 };
 
