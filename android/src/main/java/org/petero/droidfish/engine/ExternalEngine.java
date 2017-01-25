@@ -38,8 +38,8 @@ public class ExternalEngine extends UCIEngineBase {
     protected final Context context;
 
     private File engineFileName;
-    protected static final String intSfPath = "/data/data/com.stockfishexample/internal_sf";
-    private static final String exePath = "/data/data/com.stockfishexample/engine.exe";
+    protected static final String intSfPath = "/data/data/ru.kindbeetle.stockfish/internal_sf";
+    private static final String exePath = "/data/data/ru.kindbeetle.stockfish/engine.exe";
     private final Report report;
     private Process engineProc;
     private Thread startupThread;

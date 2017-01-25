@@ -1,4 +1,4 @@
-package com.stockfishexample;
+package ru.kindbeetle.stockfish;
 
 import com.facebook.react.bridge.NativeModule;
 import com.facebook.react.bridge.ReactApplicationContext;
@@ -6,6 +6,7 @@ import com.facebook.react.bridge.ReactContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.bridge.Arguments;
+import com.facebook.react.bridge.Promise;
 import com.facebook.react.modules.core.DeviceEventManagerModule;
 
 import org.petero.droidfish.engine.ExternalEngine;
@@ -34,7 +35,7 @@ public class StockfishModule extends ReactContextBaseJavaModule {
   }
 
   @ReactMethod
-  public void startEngine() {
+  public void createEngine(Promise promise) {
     Log.d("SStockfish", "startEngine");
     engine = UCIEngineBase.getEngine(this.reactContext.getApplicationContext(), "stockfish", new UCIEngine.Report() {
         @Override
@@ -54,14 +55,11 @@ public class StockfishModule extends ReactContextBaseJavaModule {
 
     engineMonitor = new Thread(new Runnable() {
         public void run() {
-            monitorLoop(engine);
+          monitorLoop(engine);
         }
     });
     engineMonitor.start();
-
-    engine.writeLineToEngine("uci");
-    engine.writeLineToEngine("isready");
-    engine.writeLineToEngine("ucinewgame");
+    promise.resolve(null);
   }
 
   protected void monitorLoop(UCIEngine engine) {
@@ -101,7 +99,7 @@ public class StockfishModule extends ReactContextBaseJavaModule {
 
   @ReactMethod
   public void sendCommand(String command) {
-    // write line to process
+    engine.writeLineToEngine(command);
   }
 
   @ReactMethod

@@ -1,4 +1,4 @@
-package com.stockfishexample;
+package ru.kindbeetle.stockfish;
 
 import com.facebook.react.ReactPackage;
 import com.facebook.react.bridge.JavaScriptModule;
@@ -11,7 +11,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.ArrayList;
 
-class StockfishPackage implements ReactPackage {
+public class StockfishPackage implements ReactPackage {
 
   @Override
   public List<Class<? extends JavaScriptModule>> createJSModules() {
