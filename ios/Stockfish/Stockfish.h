@@ -6,7 +6,7 @@
 //  Copyright © 2017 Александр Лунев. All rights reserved.
 //
 
-#import "RCTBridgeModule.h"
+#import <React/RCTBridgeModule.h>
 #import "Queue.h"
 
 @interface Stockfish : NSObject <RCTBridgeModule> {

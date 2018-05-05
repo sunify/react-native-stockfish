@@ -30,17 +30,13 @@
 static const int TAB_SIZE = 8;
 static const int CHAR_EOF = 256;
 
-// types
-
-enum token_t {
-   TOKEN_ERROR = -1,
-   TOKEN_EOF = 256,
-   TOKEN_SYMBOL = 257,
-   TOKEN_STRING = 258,
-   TOKEN_INTEGER = 259,
-   TOKEN_NAG = 260,
-   TOKEN_RESULT = 261
-};
+static const int TOKEN_ERROR = -1;
+static const int TOKEN_EOF = 256;
+static const int TOKEN_SYMBOL = 257;
+static const int TOKEN_STRING = 258;
+static const int TOKEN_INTEGER = 259;
+static const int TOKEN_NAG = 260;
+static const int TOKEN_RESULT = 261;
 
 // prototypes
 
